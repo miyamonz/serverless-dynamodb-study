@@ -45,28 +45,6 @@ const serverlessConfiguration: AWS = {
   package: { individually: true },
   resources: {
     Resources: {
-      usersTable: {
-        Type: "AWS::DynamoDB::Table",
-        Properties: {
-          TableName: "usersTable",
-          AttributeDefinitions: [
-            {
-              AttributeName: "email",
-              AttributeType: "S",
-            },
-          ],
-          KeySchema: [
-            {
-              AttributeName: "email",
-              KeyType: "HASH",
-            },
-          ],
-          ProvisionedThroughput: {
-            ReadCapacityUnits: 1,
-            WriteCapacityUnits: 1,
-          },
-        },
-      },
       TodosDynamoDbTable: {
         Type: "AWS::DynamoDB::Table",
         DeletionPolicy: "Retain",

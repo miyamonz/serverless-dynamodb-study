@@ -1,7 +1,9 @@
+import type { AWS } from "@serverless/typescript";
+type FunctionConfig = AWS["functions"][string];
 import { handlerPath } from "@libs/handlerResolver";
 
 const path = "todos";
-export const create = {
+export const create: FunctionConfig = {
   handler: `${handlerPath(__dirname)}/create.create`,
   events: [
     {
@@ -13,7 +15,7 @@ export const create = {
     },
   ],
 };
-export const list = {
+export const list: FunctionConfig = {
   handler: `${handlerPath(__dirname)}/list.list`,
   events: [
     {
